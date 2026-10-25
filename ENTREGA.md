@@ -25,8 +25,8 @@ Validações já executadas com sucesso: 5 testes da API, ESLint, compilação T
 ## Antes de submeter no Moodle
 
 1. Identificação preenchida: Rodrigo Alexandre Vitória Mira, número 79432.
-2. Publicar todo o conteúdo desta pasta num repositório GitHub e partilhar o acesso com o docente.
-3. Inserir o URL do repositório no campo assinalado na capa e na última página do PDF. Para regenerar depois de alterar `repository.txt`, executar `python scripts/generate_report.py` num ambiente Python com ReportLab e Pillow.
-4. Confirmar que o repositório contém as pastas `images`, `models` e `prototype`, e submeter o PDF juntamente com o URL.
+2. Repositório GitHub: https://github.com/p215064/MSP-CuidaMais-Sprint1
+3. O URL está inserido na capa e na última página do PDF. Para regenerar depois de alterar `repository.txt`, executar `python scripts/generate_report.py` num ambiente Python com ReportLab e Pillow.
+4. Confirmar que o repositório público contém as pastas `images`, `models` e `prototype`, e submeter o PDF juntamente com o URL no Moodle.
 
-O trabalho está identificado como **individual**: o autor acumula os papéis de Scrum Master, Quality Controller e Team Member, sem membros fictícios nem rotação entre pessoas. Falta apenas publicar o repositório e inserir o respetivo URL.
+O trabalho está identificado como **individual**: o autor acumula os papéis de Scrum Master, Quality Controller e Team Member, sem membros fictícios nem rotação entre pessoas. A identificação e o URL do repositório estão preenchidos.

@@ -57,7 +57,7 @@ def cover(canvas,doc):
 story.append(Spacer(1,3.2*cm));p('Cuida+','CoverTitle');p('Sistema ciber-físico de apoio a idosos','CoverSub');story.append(Spacer(1,1.1*cm));p('TRABALHO PRÁTICO — PRIMEIRO SPRINT','H2x');story[-1].alignment=TA_CENTER
 p('Modelação BPMN, requisitos SysML, planeamento e protótipo full-stack','CoverSub');story.append(Spacer(1,1.4*cm))
 table(['Elemento','Informação'],[['Unidade curricular','MSP — Modelação e Simulação de Processos'],['Modalidade','Trabalho individual'],['Autor','Rodrigo Alexandre Vitória Mira — 79432'],['Período do Sprint 1','22 a 25 de outubro de 2026'],['Data de preparação','25 de outubro de 2026'],['Repositório GitHub',REPO]],[4.2*cm,11.8*cm])
-p('<b>Nota de entrega:</b> o URL público do repositório tem de ser confirmado antes da submissão. O código, os modelos, as imagens e este relatório encontram-se na estrutura de pastas entregue.','Callout')
+p('<b>Nota de entrega:</b> submeter este relatório em PDF e o URL público do repositório GitHub. O código, os modelos, as imagens e este relatório encontram-se na estrutura de pastas entregue.','Callout')
 page()
 
 h1('1. Enquadramento e âmbito')
