@@ -40,21 +40,21 @@ def setup(w=14,h=6):
 def save(fig,name):
     fig.savefig(IMG/name,dpi=180,bbox_inches='tight',facecolor='white');plt.close(fig)
 
-# Gantt — 22 a 25 de outubro de 2026
-tasks=[('T01','Definir papéis e âmbito',0,1),('T02','Identificar 12 funcionalidades',0,1),('T03','Modelar BPMN principal e subprocessos',1,2),('T04','Elicitar requisitos funcionais SysML',1,1),('T05','Analisar 4 RNFs e relações',2,1),('T06','Preparar planeamento e Gantt',0,1),('T07','Implementar back-end básico',1,2),('T08','Implementar front-end básico',2,1),('T09','Executar testes e capturas',3,1),('T10','Burndown, relatório e entrega',3,1)]
+# Gantt: 22 a 25 de outubro de 2026
+tasks=[('T01','Definir papéis e âmbito',0,1),('T02','Identificar 12 funcionalidades',0,1),('T03','Modelar BPMN principal e subprocessos',1,2),('T04','Elicitar requisitos funcionais SysML',1,1),('T05','Analisar 4 RNFs e relações',2,1),('T06','Preparar planeamento e Gantt',0,1),('T07','Implementar servidor básico',1,2),('T08','Implementar interface básica',2,1),('T09','Executar testes e capturas',3,1),('T10','Burndown, relatório e entrega',3,1)]
 fig,ax=plt.subplots(figsize=(13,6.5));days=['22 out','23 out','24 out','25 out']
 for i,(tid,name,start,dur) in enumerate(tasks):
     y=len(tasks)-1-i;ax.barh(y,dur,left=start,height=.58,color=COLORS['teal'] if tid not in ('T09','T10') else '#4d8d83');ax.text(start+.06,y,tid,va='center',ha='left',color='white',fontsize=8,fontweight='bold')
-ax.set_yticks(range(len(tasks)),[x[1] for x in tasks][::-1]);ax.set_xticks(np.arange(4)+.5,days);ax.set_xlim(0,4);ax.set_xticks(np.arange(5),minor=True);ax.grid(which='minor',axis='x',color='#dce7e4');ax.set_axisbelow(True);ax.set_title('Sprint 1 — Diagrama de Gantt',loc='left',fontsize=16,pad=18,color=COLORS['ink']);ax.spines[:].set_visible(False);ax.tick_params(length=0,labelsize=9);fig.tight_layout();save(fig,'gantt-sprint-1.png')
+ax.set_yticks(range(len(tasks)),[x[1] for x in tasks][::-1]);ax.set_xticks(np.arange(4)+.5,days);ax.set_xlim(0,4);ax.set_xticks(np.arange(5),minor=True);ax.grid(which='minor',axis='x',color='#dce7e4');ax.set_axisbelow(True);ax.set_title('Sprint 1: Diagrama de Gantt',loc='left',fontsize=16,pad=18,color=COLORS['ink']);ax.spines[:].set_visible(False);ax.tick_params(length=0,labelsize=9);fig.tight_layout();save(fig,'gantt-sprint-1.png')
 
-# Burndown — 32 horas de trabalho individual
+# Burndown: 32 horas de trabalho individual
 fig,ax=plt.subplots(figsize=(10,5.4));x=np.arange(5);ideal=[32,24,16,8,0];actual=[32,26,17,7,0]
-ax.plot(x,ideal,'--o',label='Ideal',color='#879b97');ax.plot(x,actual,'-o',label='Real',color=COLORS['teal'],linewidth=2.5);ax.fill_between(x,actual,alpha=.08,color=COLORS['teal']);ax.set_xticks(x,['Início','22 out','23 out','24 out','25 out']);ax.set_ylabel('Trabalho restante (horas)');ax.set_ylim(0,35);ax.grid(axis='y',alpha=.22);ax.spines[['top','right']].set_visible(False);ax.legend(frameon=False);ax.set_title('Sprint 1 — Burndown Chart (trabalho individual)',loc='left',fontsize=16,pad=16,color=COLORS['ink']);
+ax.plot(x,ideal,'--o',label='Ideal',color='#879b97');ax.plot(x,actual,'-o',label='Real',color=COLORS['teal'],linewidth=2.5);ax.fill_between(x,actual,alpha=.08,color=COLORS['teal']);ax.set_xticks(x,['Início','22 out','23 out','24 out','25 out']);ax.set_ylabel('Trabalho restante (horas)');ax.set_ylim(0,35);ax.grid(axis='y',alpha=.22);ax.spines[['top','right']].set_visible(False);ax.legend(frameon=False);ax.set_title('Sprint 1: Burndown Chart (trabalho individual)',loc='left',fontsize=16,pad=16,color=COLORS['ink']);
 for xi,yi in zip(x,actual):ax.annotate(f'{yi} h',(xi,yi),xytext=(0,9),textcoords='offset points',ha='center',fontsize=9)
 fig.tight_layout();save(fig,'burndown-sprint-1.png')
 
-# BPMN main process — barras de distribuição evitam cruzamentos entre ramos
-fig,ax=setup(10,13);ax.text(.03,.975,'Processo principal BPMN — Operação do sistema Cuida+',fontsize=17,fontweight='bold',color=COLORS['ink']);ax.text(.03,.945,'Pool: Cuida+ | Lane: Plataforma cyber-física',fontsize=10,color='#637c78')
+# BPMN main process: barras de distribuição evitam cruzamentos entre ramos
+fig,ax=setup(10,13);ax.text(.03,.975,'Processo principal BPMN: Operação do sistema Cuida+',fontsize=17,fontweight='bold',color=COLORS['ink']);ax.text(.03,.945,'Pool: Cuida+ | Lane: Plataforma cyber-física',fontsize=10,color='#637c78')
 ax.add_patch(Rectangle((.025,.045),.95,.875,fill=False,edgecolor=COLORS['ink'],linewidth=1.4));ax.text(.03,.9,'Cuida+',fontsize=10,fontweight='bold')
 start=Circle((.07,.5),.012,facecolor='white',edgecolor=COLORS['teal'],linewidth=2);ax.add_patch(start)
 fork=Polygon([[.12,.5],[.145,.52],[.17,.5],[.145,.48]],closed=True,facecolor='white',edgecolor=COLORS['ink']);ax.add_patch(fork);ax.plot([.13,.16],[.5,.5],color=COLORS['ink']);ax.plot([.145,.145],[.485,.515],color=COLORS['ink']);arrow(ax,.082,.5,.12,.5)
@@ -73,7 +73,7 @@ save(fig,'bpmn-processo-principal.png')
 
 # BPMN subprocess diagrams
 for idx,(fid,name,t1,t2,t3) in enumerate(features):
-    fig,ax=setup(13,3.6);ax.text(.025,.91,f'BPMN — Subprocesso {fid}: {name}',fontsize=15,fontweight='bold',color=COLORS['ink'])
+    fig,ax=setup(13,3.6);ax.text(.025,.91,f'BPMN: Subprocesso {fid}: {name}',fontsize=15,fontweight='bold',color=COLORS['ink'])
     ax.add_patch(Rectangle((.025,.13),.95,.67,fill=False,edgecolor=COLORS['ink'],linewidth=1.2));ax.text(.03,.755,fid,fontsize=9,fontweight='bold')
     ax.add_patch(Circle((.075,.455),.021,facecolor='white',edgecolor=COLORS['teal'],linewidth=2));arrow(ax,.096,.455,.16,.455)
     box(ax,.16,.385,.18,.14,t1,fc='#f7faf9',fontsize=9);arrow(ax,.34,.455,.425,.455)
@@ -102,7 +102,7 @@ reqs={
 'F11':('RF11','O sistema deve comunicar emergências e contexto clínico a um serviço externo e guardar a referência.'),
 'F12':('RF12','O sistema deve consultar o stock do dispensador e solicitar reposição ao serviço da farmácia.')}
 for group,ids in [('basicas',['F01','F02','F03','F04']),('existentes',['F05','F06','F07','F08','F09','F10']),('novas',['F11','F12'])]:
-    fig,ax=setup(13,2.2*len(ids)+1.4);ax.text(.02,.97,f'SysML Requirements Diagram — Funcionalidades {group}',fontsize=16,fontweight='bold',va='top',color=COLORS['ink'])
+    fig,ax=setup(13,2.2*len(ids)+1.4);ax.text(.02,.97,f'SysML Requirements Diagram: Funcionalidades {group}',fontsize=16,fontweight='bold',va='top',color=COLORS['ink'])
     n=len(ids)
     for i,fid in enumerate(ids):
         y=.86-i*(.78/max(n,1));rid,text=reqs[fid]
@@ -115,7 +115,7 @@ for group,ids in [('basicas',['F01','F02','F03','F04']),('existentes',['F05','F0
     save(fig,f'sysml-requisitos-{group}.png')
 
 # NFR diagram with contributions and conflicts
-fig,ax=setup(13,8);ax.text(.03,.96,'SysML Requirements Diagram — Requisitos não funcionais e relações',fontsize=16,fontweight='bold',color=COLORS['ink'])
+fig,ax=setup(13,8);ax.text(.03,.96,'SysML Requirements Diagram: Requisitos não funcionais e relações',fontsize=16,fontweight='bold',color=COLORS['ink'])
 nfr=[('RNF01','Segurança e privacidade','Cifragem, controlo de acesso, consentimento e minimização de dados.'),('RNF04','Desempenho em tempo real','Alerta local em ≤ 2 s no percentil 95; registo de medições em ≤ 1 s.'),('RNF03','Usabilidade e acessibilidade','Interface responsiva, contraste, foco visível e controlos de grande dimensão.'),('RNF02','Disponibilidade e recuperação','Serviço local de alertas disponível 99,5% e recuperação automática.')]
 pos=[(.07,.65),(.56,.65),(.07,.25),(.56,.25)]
 for (rid,title,text),(x,y) in zip(nfr,pos):
@@ -137,7 +137,7 @@ process=ET.SubElement(defs,q('bpmn','process'),{'id':'Process_CuidaMais','name':
 ET.SubElement(process,q('bpmn','startEvent'),{'id':'Start_Main','name':'Evento do sistema'})
 ET.SubElement(process,q('bpmn','parallelGateway'),{'id':'Gateway_Fork'})
 for fid,name,*_ in features:
-    sub=ET.SubElement(process,q('bpmn','subProcess'),{'id':f'SubProcess_{fid}','name':f'{fid} — {name}'})
+    sub=ET.SubElement(process,q('bpmn','subProcess'),{'id':f'SubProcess_{fid}','name':f'{fid}: {name}'})
     ET.SubElement(sub,q('bpmn','startEvent'),{'id':f'Start_{fid}'})
     ET.SubElement(sub,q('bpmn','task'),{'id':f'Task_{fid}_1','name':'Executar funcionalidade'})
     ET.SubElement(sub,q('bpmn','endEvent'),{'id':f'End_{fid}'})

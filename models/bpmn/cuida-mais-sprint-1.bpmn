@@ -3,84 +3,84 @@
   <bpmn:process id="Process_CuidaMais" name="Operação do sistema Cuida+" isExecutable="false">
     <bpmn:startEvent id="Start_Main" name="Evento do sistema"/>
     <bpmn:parallelGateway id="Gateway_Fork"/>
-    <bpmn:subProcess id="SubProcess_F01" name="F01 — Registar conta do idoso">
+    <bpmn:subProcess id="SubProcess_F01" name="F01: Registar conta do idoso">
       <bpmn:startEvent id="Start_F01"/>
       <bpmn:task id="Task_F01_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F01"/>
       <bpmn:sequenceFlow id="Flow_F01_1" sourceRef="Start_F01" targetRef="Task_F01_1"/>
       <bpmn:sequenceFlow id="Flow_F01_2" sourceRef="Task_F01_1" targetRef="End_F01"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F02" name="F02 — Adicionar contactos familiares">
+    <bpmn:subProcess id="SubProcess_F02" name="F02: Adicionar contactos familiares">
       <bpmn:startEvent id="Start_F02"/>
       <bpmn:task id="Task_F02_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F02"/>
       <bpmn:sequenceFlow id="Flow_F02_1" sourceRef="Start_F02" targetRef="Task_F02_1"/>
       <bpmn:sequenceFlow id="Flow_F02_2" sourceRef="Task_F02_1" targetRef="End_F02"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F03" name="F03 — Detetar queda">
+    <bpmn:subProcess id="SubProcess_F03" name="F03: Detetar queda">
       <bpmn:startEvent id="Start_F03"/>
       <bpmn:task id="Task_F03_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F03"/>
       <bpmn:sequenceFlow id="Flow_F03_1" sourceRef="Start_F03" targetRef="Task_F03_1"/>
       <bpmn:sequenceFlow id="Flow_F03_2" sourceRef="Task_F03_1" targetRef="End_F03"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F04" name="F04 — Monitorizar tensão arterial">
+    <bpmn:subProcess id="SubProcess_F04" name="F04: Monitorizar tensão arterial">
       <bpmn:startEvent id="Start_F04"/>
       <bpmn:task id="Task_F04_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F04"/>
       <bpmn:sequenceFlow id="Flow_F04_1" sourceRef="Start_F04" targetRef="Task_F04_1"/>
       <bpmn:sequenceFlow id="Flow_F04_2" sourceRef="Task_F04_1" targetRef="End_F04"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F05" name="F05 — Gerir medicação">
+    <bpmn:subProcess id="SubProcess_F05" name="F05: Gerir medicação">
       <bpmn:startEvent id="Start_F05"/>
       <bpmn:task id="Task_F05_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F05"/>
       <bpmn:sequenceFlow id="Flow_F05_1" sourceRef="Start_F05" targetRef="Task_F05_1"/>
       <bpmn:sequenceFlow id="Flow_F05_2" sourceRef="Task_F05_1" targetRef="End_F05"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F06" name="F06 — Prevenir acidentes domésticos">
+    <bpmn:subProcess id="SubProcess_F06" name="F06: Prevenir acidentes domésticos">
       <bpmn:startEvent id="Start_F06"/>
       <bpmn:task id="Task_F06_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F06"/>
       <bpmn:sequenceFlow id="Flow_F06_1" sourceRef="Start_F06" targetRef="Task_F06_1"/>
       <bpmn:sequenceFlow id="Flow_F06_2" sourceRef="Task_F06_1" targetRef="End_F06"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F07" name="F07 — Controlar iluminação e temperatura">
+    <bpmn:subProcess id="SubProcess_F07" name="F07: Controlar iluminação e temperatura">
       <bpmn:startEvent id="Start_F07"/>
       <bpmn:task id="Task_F07_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F07"/>
       <bpmn:sequenceFlow id="Flow_F07_1" sourceRef="Start_F07" targetRef="Task_F07_1"/>
       <bpmn:sequenceFlow id="Flow_F07_2" sourceRef="Task_F07_1" targetRef="End_F07"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F08" name="F08 — Monitorizar sinais vitais">
+    <bpmn:subProcess id="SubProcess_F08" name="F08: Monitorizar sinais vitais">
       <bpmn:startEvent id="Start_F08"/>
       <bpmn:task id="Task_F08_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F08"/>
       <bpmn:sequenceFlow id="Flow_F08_1" sourceRef="Start_F08" targetRef="Task_F08_1"/>
       <bpmn:sequenceFlow id="Flow_F08_2" sourceRef="Task_F08_1" targetRef="End_F08"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F09" name="F09 — Prevenir úlceras de pressão">
+    <bpmn:subProcess id="SubProcess_F09" name="F09: Prevenir úlceras de pressão">
       <bpmn:startEvent id="Start_F09"/>
       <bpmn:task id="Task_F09_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F09"/>
       <bpmn:sequenceFlow id="Flow_F09_1" sourceRef="Start_F09" targetRef="Task_F09_1"/>
       <bpmn:sequenceFlow id="Flow_F09_2" sourceRef="Task_F09_1" targetRef="End_F09"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F10" name="F10 — Vigiar deambulação">
+    <bpmn:subProcess id="SubProcess_F10" name="F10: Vigiar deambulação">
       <bpmn:startEvent id="Start_F10"/>
       <bpmn:task id="Task_F10_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F10"/>
       <bpmn:sequenceFlow id="Flow_F10_1" sourceRef="Start_F10" targetRef="Task_F10_1"/>
       <bpmn:sequenceFlow id="Flow_F10_2" sourceRef="Task_F10_1" targetRef="End_F10"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F11" name="F11 — Integrar serviço de emergência">
+    <bpmn:subProcess id="SubProcess_F11" name="F11: Integrar serviço de emergência">
       <bpmn:startEvent id="Start_F11"/>
       <bpmn:task id="Task_F11_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F11"/>
       <bpmn:sequenceFlow id="Flow_F11_1" sourceRef="Start_F11" targetRef="Task_F11_1"/>
       <bpmn:sequenceFlow id="Flow_F11_2" sourceRef="Task_F11_1" targetRef="End_F11"/>
     </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_F12" name="F12 — Integrar farmácia e dispensador">
+    <bpmn:subProcess id="SubProcess_F12" name="F12: Integrar farmácia e dispensador">
       <bpmn:startEvent id="Start_F12"/>
       <bpmn:task id="Task_F12_1" name="Executar funcionalidade"/>
       <bpmn:endEvent id="End_F12"/>

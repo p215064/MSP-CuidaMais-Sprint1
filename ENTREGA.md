@@ -1,9 +1,9 @@
-# Entrega — Sprint 1 | Cuida+
+# Entrega: Sprint 1 | Cuida+
 
 ## Conteúdo
 
 - `MSP_Sprint1_CuidaMais.pdf`: relatório de 27 páginas com modelos, decisões, planeamento e capturas.
-- `prototype/`: front-end React/TypeScript e back-end Express, com dados fictícios e testes.
+- `prototype/`: interface React/TypeScript e servidor Express, com dados fictícios e testes.
 - `models/bpmn/`: fonte BPMN 2.0 com processo principal e 12 subprocessos.
 - `models/sysml/`: fonte SysML v2 com 12 requisitos funcionais e 4 não funcionais.
 - `images/`: Gantt, burndown, diagramas e capturas.
@@ -18,7 +18,7 @@ npm install
 npm run dev -- --host 0.0.0.0 --port 3000
 ```
 
-Abrir `http://localhost:3000`. O front-end e a API são iniciados pelo mesmo comando.
+Abrir `http://localhost:3000`. A interface e a API são iniciadas pelo mesmo comando.
 
 Validações já executadas com sucesso: 5 testes da API, ESLint, compilação TypeScript/Vite, quatro fluxos no navegador e captura móvel. As dependências de produção apresentam 0 vulnerabilidades conhecidas na auditoria npm final.
 
