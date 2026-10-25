@@ -56,8 +56,8 @@ def cover(canvas,doc):
 # Cover
 story.append(Spacer(1,3.2*cm));p('Cuida+','CoverTitle');p('Sistema ciber-físico de apoio a idosos','CoverSub');story.append(Spacer(1,1.1*cm));p('TRABALHO PRÁTICO — PRIMEIRO SPRINT','H2x');story[-1].alignment=TA_CENTER
 p('Modelação BPMN, requisitos SysML, planeamento e protótipo full-stack','CoverSub');story.append(Spacer(1,1.4*cm))
-table(['Elemento','Informação'],[['Unidade curricular','MSP — Modelação e Simulação de Processos'],['Equipa','4 elementos — Membro 1, Membro 2, Membro 3 e Membro 4'],['Período do Sprint 1','22 a 25 de outubro de 2026'],['Data de preparação','25 de outubro de 2026'],['Repositório GitHub',REPO]],[4.2*cm,11.8*cm])
-p('<b>Nota de entrega:</b> os identificadores dos elementos e o URL público do repositório têm de ser confirmados pela equipa antes da submissão. O código, os modelos, as imagens e este relatório encontram-se na estrutura de pastas entregue.','Callout')
+table(['Elemento','Informação'],[['Unidade curricular','MSP — Modelação e Simulação de Processos'],['Modalidade','Trabalho individual'],['Autor','Nome e número de estudante a preencher'],['Período do Sprint 1','22 a 25 de outubro de 2026'],['Data de preparação','25 de outubro de 2026'],['Repositório GitHub',REPO]],[4.2*cm,11.8*cm])
+p('<b>Nota de entrega:</b> a identificação do autor e o URL público do repositório têm de ser confirmados antes da submissão. O código, os modelos, as imagens e este relatório encontram-se na estrutura de pastas entregue.','Callout')
 page()
 
 h1('1. Enquadramento e âmbito')
@@ -70,26 +70,26 @@ h2('Estrutura da entrega')
 table(['Pasta / ficheiro','Conteúdo'],[['prototype/','Front-end, back-end, dados de demonstração, testes e instruções.'],['models/bpmn/','Processo BPMN 2.0 com 12 subprocessos em XML.'],['models/sysml/','Fonte textual SysML v2 dos requisitos.'],['images/','Gantt, burndown, modelos e capturas do protótipo.'],['MSP_Sprint1_CuidaMais.pdf','Relatório consolidado com modelos, comentários e decisões.']],[4.3*cm,11.7*cm])
 page()
 
-h1('2. Organização da equipa e qualidade')
-p('Adota-se Scrum com uma equipa de quatro elementos. O papel de Scrum Master roda semanalmente; no Sprint 1 é atribuído ao Membro 1. O controlo de qualidade segue o princípio “one for all, all for one”: todos revêm modelos, código e evidências, existindo um coordenador por semana.')
-table(['Elemento','Papéis no Sprint 1','Responsabilidades principais'],[['Membro 1','Scrum Master; team member','Facilitação, dependências, Gantt, burndown e remoção de impedimentos.'],['Membro 2','Quality controller; team member','Rastreabilidade, revisão BPMN/SysML e checklist de entrega.'],['Membro 3','Team member','Back-end, validações, persistência e testes da API.'],['Membro 4','Team member','Front-end, acessibilidade, capturas e testes navegáveis.'],['Todos','Qualidade partilhada','Revisão cruzada, verificação dos requisitos e aprovação do incremento.']],[2.5*cm,4.1*cm,9.4*cm])
-h2('Rotação semanal prevista')
-table(['Semana','Scrum Master','Coordenação da qualidade'],[['22–25 outubro','Membro 1','Membro 2'],['Seguinte','Membro 2','Membro 3'],['Depois','Membro 3','Membro 4'],['Depois','Membro 4','Membro 1']],[4*cm,6*cm,6*cm])
+h1('2. Organização individual e qualidade')
+p('Embora o enunciado preveja equipas de quatro elementos, este trabalho é realizado <b>individualmente</b>. O mesmo autor acumula os papéis de Scrum Master, Quality Controller e Team Member, cobrindo planeamento, modelação, desenvolvimento, testes e documentação. Não se criam membros fictícios nem uma rotação entre pessoas.')
+table(['Responsável','Papéis no Sprint 1','Responsabilidades'],[['Autor','Scrum Master','Planeamento, dependências, Gantt, burndown e gestão do âmbito.'],['Autor','Quality Controller','Rastreabilidade, revisão BPMN/SysML, verificação e checklist de entrega.'],['Autor','Team Member','Back-end, front-end, persistência, testes e capturas.']],[2.5*cm,4.1*cm,9.4*cm])
+h2('Adaptação dos papéis ao trabalho individual')
+p('A rotação semanal do Scrum Master não é aplicável a uma equipa de uma pessoa: o autor mantém esse papel durante todo o trabalho. O princípio de qualidade “one for all, all for one” é operacionalizado através de autorrevisão estruturada, testes objetivos e inspeção visual dos modelos e do relatório.')
 h2('Definição de pronto')
-p('Uma tarefa só é considerada concluída quando o resultado está guardado no repositório, revisto por outro elemento, sem erros conhecidos bloqueantes e acompanhado pela evidência aplicável: modelo exportado, teste automatizado, captura ou secção do relatório.')
+p('Uma tarefa só é considerada concluída quando o resultado está guardado no repositório, revisto pelo autor com base num checklist, sem erros conhecidos bloqueantes e acompanhado pela evidência aplicável: modelo exportado, teste automatizado, captura ou secção do relatório.')
 page()
 
 h1('3. Planeamento do Sprint 1')
-p('A unidade de estimativa é a hora de trabalho da equipa. O sprint contém 80 horas planeadas. As dependências refletem os artefactos necessários antes do início de cada tarefa; a atribuição não impede revisão cruzada.')
-tasks=[('T01','Definir papéis e âmbito','—','M1','4','Concluída'),('T02','Identificar 12 funcionalidades','T01','M1, M2','6','Concluída'),('T03','Modelar BPMN principal e 12 subprocessos','T02','M2','12','Concluída'),('T04','Elicitar requisitos funcionais SysML','T02','M2, M4','8','Concluída'),('T05','Analisar 4 RNFs e relações','T04','M2','4','Concluída'),('T06','Preparar planeamento e Gantt','T01','M1','4','Concluída'),('T07','Implementar back-end básico','T02, T04','M3','16','Concluída'),('T08','Implementar front-end básico','T04, T07','M4','16','Concluída'),('T09','Executar testes e capturas','T07, T08','M3, M4','6','Concluída'),('T10','Fechar burndown, relatório e entrega','T03, T05, T06, T09','M1, M2','4','Concluída')]
+p('A unidade de estimativa é a hora de <b>trabalho individual</b>. O sprint contém 32 horas planeadas. Todas as tarefas são atribuídas ao autor; as dependências indicam os artefactos necessários antes do início de cada tarefa.')
+tasks=[('T01','Definir papéis e âmbito','—','Autor','2','Concluída'),('T02','Identificar 12 funcionalidades','T01','Autor','3','Concluída'),('T03','Modelar BPMN principal e 12 subprocessos','T02','Autor','5','Concluída'),('T04','Elicitar requisitos funcionais SysML','T02','Autor','4','Concluída'),('T05','Analisar 4 RNFs e relações','T04','Autor','2','Concluída'),('T06','Preparar planeamento e Gantt','T01','Autor','2','Concluída'),('T07','Implementar back-end básico','T02, T04','Autor','5','Concluída'),('T08','Implementar front-end básico','T04, T07','Autor','5','Concluída'),('T09','Executar testes e capturas','T07, T08','Autor','2','Concluída'),('T10','Fechar burndown, relatório e entrega','T03, T05, T06, T09','Autor','2','Concluída')]
 table(['ID','Tarefa','Dependências','Resp.','h','Estado'],tasks,[1*cm,6.1*cm,2.6*cm,1.8*cm,.7*cm,2.3*cm])
 h2('Gantt e burndown')
-image('gantt-sprint-1.png',width=16.7*cm,maxheight=10.2*cm,caption='Figura 1 — Calendarização das tarefas do Sprint 1.')
+image('gantt-sprint-1.png',width=16.7*cm,maxheight=10.2*cm,caption='Figura 1 — Calendarização das tarefas individuais do Sprint 1.')
 page()
 h1('3. Planeamento do Sprint 1 — acompanhamento')
-image('burndown-sprint-1.png',width=16.2*cm,maxheight=11.2*cm,caption='Figura 2 — Burndown ideal e registado no encerramento do sprint.')
-table(['Marco','Ideal restante','Real restante','Comentário'],[['Início','80 h','80 h','Âmbito estimado e dependências identificadas.'],['22 outubro','60 h','64 h','Arranque mais lento; sem alteração de âmbito.'],['23 outubro','40 h','42 h','Modelação e back-end permitiram recuperar trabalho.'],['24 outubro','20 h','18 h','Front-end integrado; início dos testes.'],['25 outubro','0 h','0 h','Quatro funcionalidades básicas verificadas e relatório consolidado.']],[3*cm,2.6*cm,2.6*cm,7.8*cm])
-p('O burndown mede trabalho restante, não qualidade. A conclusão só foi aceite depois dos testes da API, da compilação, da análise estática e da validação dos fluxos no navegador.','Callout')
+image('burndown-sprint-1.png',width=16.2*cm,maxheight=11.2*cm,caption='Figura 2 — Burndown individual ideal e registado no encerramento do sprint.')
+table(['Marco','Ideal restante','Real restante','Comentário'],[['Início','32 h','32 h','Âmbito estimado e dependências identificadas.'],['22 outubro','24 h','26 h','Arranque mais lento; sem alteração de âmbito.'],['23 outubro','16 h','17 h','Modelação e back-end permitiram recuperar trabalho.'],['24 outubro','8 h','7 h','Front-end integrado; início dos testes.'],['25 outubro','0 h','0 h','Quatro funcionalidades básicas verificadas e relatório consolidado.']],[3*cm,2.6*cm,2.6*cm,7.8*cm])
+p('O burndown mede trabalho individual restante, não qualidade. A conclusão só foi aceite depois dos testes da API, da compilação, da análise estática e da validação dos fluxos no navegador.','Callout')
 page()
 
 h1('4. Catálogo das 12 funcionalidades')
@@ -181,10 +181,10 @@ table(['Elemento','Proposta','Justificação'],[['Existente 1','F05 — Gerir me
 h2('Trabalho explicitamente adiado')
 p('Os diagramas arquiteturais BDD/IBD, casos de uso, sequências, deployment, padrões arquiteturais, modelo de variabilidade e configurações SPL pertencem ao Sprint 2 e não são apresentados como entregáveis do Sprint 1.')
 h2('Checklist final do Sprint 1')
-checklist=['Papéis, qualidade partilhada e rotação definidos.','Tabela de dependências, Gantt e burndown incluídos.','12 funcionalidades identificadas na proporção 4 + 6 + 2.','Processo BPMN principal e 12 subprocessos incluídos.','Requisitos funcionais SysML e quatro RNFs com contribuições/conflitos incluídos.','Protótipo front-end e back-end das quatro funcionalidades básicas verificado.','Capturas do protótipo incluídas.','Proposta do Sprint 2 pronta para negociação.']
+checklist=['Modalidade individual e acumulação dos papéis pelo autor definidas.','Tabela de dependências, Gantt e burndown individual incluídos.','12 funcionalidades identificadas na proporção 4 + 6 + 2.','Processo BPMN principal e 12 subprocessos incluídos.','Requisitos funcionais SysML e quatro RNFs com contribuições/conflitos incluídos.','Protótipo front-end e back-end das quatro funcionalidades básicas verificado.','Capturas do protótipo incluídas.','Proposta do Sprint 2 pronta para negociação.']
 for item in checklist:p('✓ '+item)
 p(f'<b>Repositório GitHub:</b> {REPO}','Callout')
 
-doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=2.2*cm,leftMargin=2.2*cm,topMargin=2*cm,bottomMargin=1.8*cm,title='Cuida+ — Sprint 1',author='Equipa MSP',subject='BPMN, SysML, planeamento e protótipo')
+doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=2.2*cm,leftMargin=2.2*cm,topMargin=2*cm,bottomMargin=1.8*cm,title='Cuida+ — Sprint 1',author='Autor MSP — trabalho individual',subject='BPMN, SysML, planeamento e protótipo')
 doc.build(story,onFirstPage=cover,onLaterPages=header_footer)
 print(OUT)

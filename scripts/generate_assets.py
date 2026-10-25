@@ -47,9 +47,9 @@ for i,(tid,name,start,dur) in enumerate(tasks):
     y=len(tasks)-1-i;ax.barh(y,dur,left=start,height=.58,color=COLORS['teal'] if tid not in ('T09','T10') else '#4d8d83');ax.text(start+.06,y,tid,va='center',ha='left',color='white',fontsize=8,fontweight='bold')
 ax.set_yticks(range(len(tasks)),[x[1] for x in tasks][::-1]);ax.set_xticks(np.arange(4)+.5,days);ax.set_xlim(0,4);ax.set_xticks(np.arange(5),minor=True);ax.grid(which='minor',axis='x',color='#dce7e4');ax.set_axisbelow(True);ax.set_title('Sprint 1 — Diagrama de Gantt',loc='left',fontsize=16,pad=18,color=COLORS['ink']);ax.spines[:].set_visible(False);ax.tick_params(length=0,labelsize=9);fig.tight_layout();save(fig,'gantt-sprint-1.png')
 
-# Burndown
-fig,ax=plt.subplots(figsize=(10,5.4));x=np.arange(5);ideal=[80,60,40,20,0];actual=[80,64,42,18,0]
-ax.plot(x,ideal,'--o',label='Ideal',color='#879b97');ax.plot(x,actual,'-o',label='Real',color=COLORS['teal'],linewidth=2.5);ax.fill_between(x,actual,alpha=.08,color=COLORS['teal']);ax.set_xticks(x,['Início','22 out','23 out','24 out','25 out']);ax.set_ylabel('Trabalho restante (horas)');ax.set_ylim(0,85);ax.grid(axis='y',alpha=.22);ax.spines[['top','right']].set_visible(False);ax.legend(frameon=False);ax.set_title('Sprint 1 — Burndown Chart',loc='left',fontsize=16,pad=16,color=COLORS['ink']);
+# Burndown — 32 horas de trabalho individual
+fig,ax=plt.subplots(figsize=(10,5.4));x=np.arange(5);ideal=[32,24,16,8,0];actual=[32,26,17,7,0]
+ax.plot(x,ideal,'--o',label='Ideal',color='#879b97');ax.plot(x,actual,'-o',label='Real',color=COLORS['teal'],linewidth=2.5);ax.fill_between(x,actual,alpha=.08,color=COLORS['teal']);ax.set_xticks(x,['Início','22 out','23 out','24 out','25 out']);ax.set_ylabel('Trabalho restante (horas)');ax.set_ylim(0,35);ax.grid(axis='y',alpha=.22);ax.spines[['top','right']].set_visible(False);ax.legend(frameon=False);ax.set_title('Sprint 1 — Burndown Chart (trabalho individual)',loc='left',fontsize=16,pad=16,color=COLORS['ink']);
 for xi,yi in zip(x,actual):ax.annotate(f'{yi} h',(xi,yi),xytext=(0,9),textcoords='offset points',ha='center',fontsize=9)
 fig.tight_layout();save(fig,'burndown-sprint-1.png')
 
