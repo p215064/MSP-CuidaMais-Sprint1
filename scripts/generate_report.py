@@ -56,8 +56,8 @@ def cover(canvas,doc):
 # Cover
 story.append(Spacer(1,3.2*cm));p('Cuida+','CoverTitle');p('Sistema ciber-físico de apoio a idosos','CoverSub');story.append(Spacer(1,1.1*cm));p('TRABALHO PRÁTICO — PRIMEIRO SPRINT','H2x');story[-1].alignment=TA_CENTER
 p('Modelação BPMN, requisitos SysML, planeamento e protótipo full-stack','CoverSub');story.append(Spacer(1,1.4*cm))
-table(['Elemento','Informação'],[['Unidade curricular','MSP — Modelação e Simulação de Processos'],['Modalidade','Trabalho individual'],['Autor','Nome e número de estudante a preencher'],['Período do Sprint 1','22 a 25 de outubro de 2026'],['Data de preparação','25 de outubro de 2026'],['Repositório GitHub',REPO]],[4.2*cm,11.8*cm])
-p('<b>Nota de entrega:</b> a identificação do autor e o URL público do repositório têm de ser confirmados antes da submissão. O código, os modelos, as imagens e este relatório encontram-se na estrutura de pastas entregue.','Callout')
+table(['Elemento','Informação'],[['Unidade curricular','MSP — Modelação e Simulação de Processos'],['Modalidade','Trabalho individual'],['Autor','Rodrigo Alexandre Vitória Mira — 79432'],['Período do Sprint 1','22 a 25 de outubro de 2026'],['Data de preparação','25 de outubro de 2026'],['Repositório GitHub',REPO]],[4.2*cm,11.8*cm])
+p('<b>Nota de entrega:</b> o URL público do repositório tem de ser confirmado antes da submissão. O código, os modelos, as imagens e este relatório encontram-se na estrutura de pastas entregue.','Callout')
 page()
 
 h1('1. Enquadramento e âmbito')
@@ -185,6 +185,6 @@ checklist=['Modalidade individual e acumulação dos papéis pelo autor definida
 for item in checklist:p('✓ '+item)
 p(f'<b>Repositório GitHub:</b> {REPO}','Callout')
 
-doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=2.2*cm,leftMargin=2.2*cm,topMargin=2*cm,bottomMargin=1.8*cm,title='Cuida+ — Sprint 1',author='Autor MSP — trabalho individual',subject='BPMN, SysML, planeamento e protótipo')
+doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=2.2*cm,leftMargin=2.2*cm,topMargin=2*cm,bottomMargin=1.8*cm,title='Cuida+ — Sprint 1',author='Rodrigo Alexandre Vitória Mira — 79432',subject='BPMN, SysML, planeamento e protótipo')
 doc.build(story,onFirstPage=cover,onLaterPages=header_footer)
 print(OUT)
